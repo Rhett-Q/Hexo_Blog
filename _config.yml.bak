@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Rhett-Q's blog
+title: Rhett-Q's Blog
 subtitle:
 description:
 author: Rhett-Q
@@ -80,3 +80,17 @@ deploy:
   type: git
   repo: root@120.79.225.87:/data/hexo_git/hexo.git
   branch: master
+
+social:
+  GitHub: https://github.com/Rhett-Q
+  Twitter: https://twitter.com/your-user-name
+  Weibo: http://weibo.com/your-user-name
+  #douban: http://douban.com/people/your-user-name
+  #zhihu: http://www.zhihu.com/people/your-user-name
+social_icons:
+  enable: true
+  # Icon Mappings.
+  # KeyMapsToSocalItemKey: NameOfTheIconFromFontAwesome
+  GitHub: github
+  Twitter: twitter
+  Weibo: weibo
