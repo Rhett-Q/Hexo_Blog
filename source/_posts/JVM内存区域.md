@@ -37,3 +37,8 @@ JVM中有两块Survivor空间，一块为`From Survivor`，一块为`To Survivor
 ## Local Method Stack
 
 本地方法栈的作用于虚拟机栈的类似，区别在于本地方法栈为JVM加载使用到的`Native`方法。
+
+> 本文标题：JVM内存区域  
+> 发布时间：2018年4月1日  
+> 更新时间：2018年4月1日
+> 许可协议：[署名-非商用-相同方式共享4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
