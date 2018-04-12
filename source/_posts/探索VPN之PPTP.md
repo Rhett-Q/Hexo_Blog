@@ -30,7 +30,7 @@ tags:
 	vim etc/ppp/options.pptpd
 修改DSN
 	ms-dns 8.8.8.8
-	ms-dns 8.8.8.8
+	ms-dns 8.8.4.4
 如果你想打开debug模式，可以将下面的`#`号去掉
 	#debug 调试模式
 	#dump 服务启动时打印出所有配置信息
@@ -53,15 +53,17 @@ tags:
 ## 开启iptables,修改防火墙规则
 由于pptpd服务需要1723端口和gre协议
 
-	iptables -A INPUT -p tco --dport 1723 -j ACCEPT
+	iptables -A INPUT -p tcp --dport 1723 -j ACCEPT
 	iptables -A INPUT -p gre -j ACCEPT
 
 现在开启防火墙也可以连接上vpn了，需要访问外网则需使用iptables的网络地址转换功能NAT  
 将vpn内数据包的源地址修改为vps的内网地址
+
 	iptables -t nat -A POSTROUTING -s 192.168.0.0/24(根据前面设置的vpn网段) -j SANT -to 172.18.122.157(我服务器的内网地址)
 也可以使用MASQUERADE从网卡上自动以获取ip来替换数据包的源地址
+
 	iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
-建议直接在配置文件中写入规则，否则重启iptables时会清除命令行写入的规则。
+建议直接在配置文件`/etc/sysconfig/iptables`中写入规则，否则重启iptables时会清除命令行写入的规则。
 
 ## 调试
 
